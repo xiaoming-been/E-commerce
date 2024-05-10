@@ -28,3 +28,23 @@ header .tab button {
     margin-left: 50px;
     margin-top: 20px;
 }
+/* 总览选项卡 */
+#overview {
+    display: flex;
+}
+.over_view_tab {
+    width: 180px;
+    height: 100%;
+}
+.over_view_tab button {
+    background-color: transparent; /* 设置背景为透明 */
+    border: none; /* 去掉边框 */
+    outline: none;/* 去掉轮廓 */
+    margin-left: 50px;
+    margin-top: 20px;
+}
+/* 页脚 */
+footer {
+    text-align: center;
+    height: 50px;
+}

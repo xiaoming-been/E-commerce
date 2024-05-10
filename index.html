@@ -21,7 +21,16 @@
 <body>
 <div id="overview" class="tab_content">
     <!-- 总览选项卡内容 -->
-    a
+    <div class="over_view_tab">
+        <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_tab')">数据总览</button>
+        <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_analyze')">实时分析</button>
+        <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_channel')">实时渠道</button>
+    </div>
+    <div class="over_view_tab_content">
+        <div id="overview_tab" class="overview_tab_content">aa</div>
+        <div id="overview_analyze" class="overview_tab_content" style="display: none;">bb</div>
+        <div id="overview_channel" class="overview_tab_content" style="display: none;">cc</div>
+    </div>
 </div>
 
 <div id="contact" class="tab_content" style="display: none;">
