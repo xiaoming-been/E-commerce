@@ -1,0 +1,30 @@
+/* 公共样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 头部样式 */
+header {
+    height: 50px;
+    display: flex;
+}
+header img {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin-left: 50px;
+}
+header .title_name {
+    margin-left: 50px;
+    margin-top: 19px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+}
+header .tab button {
+    background-color: transparent; /* 设置背景为透明 */
+    border: none; /* 去掉边框 */
+    outline: none;/* 去掉轮廓 */
+    margin-left: 50px;
+    margin-top: 20px;
+}
