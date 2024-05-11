@@ -3,23 +3,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: rgb(242,242,242);
 }
 /* 头部样式 */
 header {
     height: 50px;
     display: flex;
+    background: rgb(255,255,255);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 header img {
     height: 50px;
     width: 50px;
     border-radius: 25px;
     margin-left: 50px;
+    background-color: transparent; /* 设置背景为透明 */
 }
 header .title_name {
     margin-left: 50px;
     margin-top: 19px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
+    background-color: transparent; /* 设置背景为透明 */
+}
+header .tab {
+    background-color: transparent; /* 设置背景为透明 */
 }
 header .tab button {
     background-color: transparent; /* 设置背景为透明 */
@@ -34,14 +43,16 @@ header .tab button {
 }
 .over_view_tab {
     width: 180px;
-    height: 100%;
+    display: flex;
+    flex-direction: column; /* 将选项卡垂直排列 */
+}
+over_view_tab_content {
+    flex: 1;
 }
 .over_view_tab button {
     background-color: transparent; /* 设置背景为透明 */
     border: none; /* 去掉边框 */
     outline: none;/* 去掉轮廓 */
-    margin-left: 50px;
-    margin-top: 20px;
 }
 /* 页脚 */
 footer {
