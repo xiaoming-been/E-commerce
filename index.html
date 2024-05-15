@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">-->
     <title>商城后台数据统计</title>
-    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="static/css/index.css" />
 </head>
 
 <body>
     <!--头部-->
     <header>
-        <img src="../static/images/picture.jpeg">
+        <img src="static/images/picture.jpeg">
         <div class="title_name">商城后台数据统计</div>
         <div class="tab">
             <button class="tab_links" onclick="openTab(event, 'overview')">总览</button>
@@ -30,7 +30,14 @@
             <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_channel')">实时渠道</button>
         </div>
         <div class="over_view_tab_content">
-            <div id="overview_tab" class="overview_tab_content">aa</div>
+            <div id="overview_tab" class="overview_tab_content">
+                <!-- 数据总览 -->
+                <div class="data_overview">
+                    <div class="data_overview_label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据总览</div>
+                    <div class="data_overview_today">今日概况</div>
+                </div>
+                <div class="data_overview_core_metrics">核心指标</div>
+            </div>
             <div id="overview_analyze" class="overview_tab_content" style="display: none;">bb</div>
             <div id="overview_channel" class="overview_tab_content" style="display: none;">cc</div>
         </div>
@@ -54,6 +61,6 @@
 </body>
 <!--页脚-->
 <footer>Copyright © 2024</footer>
-<script src="../static/js/index.js"></script>
+<script src="static/js/index.js"></script>
 
 </html>

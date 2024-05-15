@@ -42,7 +42,7 @@ header .tab button {
     margin-top: 20px;
 }
 header .tab button.active {
-    color: rgb(163,208,253);
+    color: rgb(3, 124, 245);
 }
 
 
@@ -60,7 +60,17 @@ header .tab button.active {
 }
 .overview_tab_links.active {
     background: rgb(243,251,255);
-    color: rgb(163,208,253);
+    color: rgb(3, 124, 245);
+    position: relative; /* 为伪元素定位做准备 */
+}
+.overview_tab_links.active::after {
+    content: ""; /* 必须，定义伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    right: 0; /* 右侧对齐 */
+    top: 0; /* 顶部对齐 */
+    width: 2px; /* 竖线的宽度 */
+    height: 100%; /* 竖线的高度 */
+    background: rgb(3, 124, 245); /* 竖线的颜色 */
 }
 .over_view_tab button {
     background-color: transparent; /* 设置背景为透明 */
@@ -69,8 +79,51 @@ header .tab button.active {
     height: 50px;
 
 }
+.over_view_tab_content {
+    width: calc(100% - 180px);
+}
+.overview_tab_content {
+    display: flex;
+    flex-direction: column; /* 将选项卡垂直排列 */
+    height: 100%;
+}
+.data_overview {
+    flex: 1;
+}
+.data_overview_label {
+    height: 50px;
+    width: calc(100% - 40px);
+    text-align: left;
+    line-height: 50px;
+    background: rgb(255,255,255);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.data_overview_today {
+    width: calc(100% - 40px);
+    height: calc(100% - 90px);
+    background: rgb(255,255,255);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.data_overview_core_metrics {
+    flex: 1;
+    width: calc(100% - 40px);
+    height: 100%;
+    background: rgb(255,255,255);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
 /* 页脚 */
 footer {
     text-align: center;
     height: 25px;
+    background: rgb(255,255,255);
 }
