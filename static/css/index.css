@@ -157,15 +157,19 @@ header .tab button.active {
 }
 .data_overview_today_detail {
     flex: 1;
-    background: rgb(255,255,255);
+    background: transparent;
     display: flex;
+    flex-direction: column; /* 将选项卡垂直排列 */
 }
 .data_overview_today_chart_content_item_top {
     background: rgb(255,255,255);
-    
+    height: calc(100% - 5px);
+    margin-bottom: 5px;
 }
 .data_overview_today_chart_content_item_bottom {
     background: rgb(255,255,255);
+    height: calc(100% - 5px);
+    margin-top: 5px;
 }
 
 .data_overview_core_metrics {
