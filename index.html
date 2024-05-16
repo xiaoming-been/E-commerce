@@ -34,7 +34,25 @@
                 <!-- 数据总览 -->
                 <div class="data_overview">
                     <div class="data_overview_label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据总览</div>
-                    <div class="data_overview_today">今日概况</div>
+                    <div class="data_overview_today">
+                        <div class="data_overview_today_chart">
+                            <div class="data_overview_today_chart_title">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今日概况</div>
+                            <div class="data_overview_today_chart_content">
+                                <div class="data_overview_today_chart_content_label">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="javascript:;">下单金额分时段趋势图</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="javascript:;">下单金额累计趋势图</a>
+                                </div>
+                                <!-- 今日概况图表 -->
+                                <div class="data_overview_today_chart_content_item"></div>
+                            </div>
+                        </div>
+                        <div class="data_overview_today_detail">
+                            <div class="data_overview_today_chart_content_item_top">访问页面数 （PV）</div>
+                            <div class="data_overview_today_chart_content_item_bottom">下单次数</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="data_overview_core_metrics">核心指标</div>
             </div>
@@ -61,6 +79,7 @@
 </body>
 <!--页脚-->
 <footer>Copyright © 2024</footer>
+<script src="static/js/echarts.min.js"></script>
 <script src="static/js/index.js"></script>
 
 </html>

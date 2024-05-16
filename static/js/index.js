@@ -55,3 +55,135 @@ function open_overview_tab(evt, tabName) {
         document.getElementById("overview_tab").style.display = "none";
     }
 }
+// 数据总览-今日概况-面积图
+(function () {
+    var labelData = [{
+        label: "下单金额分时段趋势图",
+        data: [
+            [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+            [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
+        ]
+    },
+    {
+        label: "下单金额累计趋势图",
+        data: [
+            [123, 175, 112, 197, 121, 67, 98, 21, 43, 64, 76, 38],
+            [143, 131, 165, 123, 178, 21, 82, 64, 43, 60, 19, 34]
+        ]
+    }
+    ];
+
+    var myChart = echarts.init(document.querySelector(".data_overview_today_chart_content_item"));
+
+    var option = {
+        backgroundColor: 'rgb(255,255,255)',
+        // 修改两条线的颜色
+        color: ['rgb(151,172,206)', 'rgb(222,171,164)'],
+        tooltip: {
+            trigger: 'axis'
+        },
+        // 图例组件
+        legend: {
+            right: 'center',
+        },
+        grid: {
+            top: "20%",
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true,
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false, // 去除轴间距
+            data: ['0:00', '2:00', '4:00', '6:00', '8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '23:00'],
+            // 去除刻度线
+            axisTick: {
+                show: true
+            },
+            axisLabel: {
+                // color: "#4c9bfb" // x轴文本颜色
+            },
+            axisLine: {
+                show: false // 去除轴线
+            }
+        },
+        yAxis: {
+            type: 'value',
+            // 去除刻度线
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                // color: "#4c9bfb" // x轴文本颜色
+            },
+            axisLine: {
+                show: false // 去除轴线
+            },
+            splitLine: {
+                lineStyle: {
+                    // color: "rgb(244,244,244)"
+                }
+            }
+        },
+        series: [{
+            type: 'line',
+            smooth: true, // 圆滑的线
+            name: '昨日',
+            stack: '总量',
+            areaStyle: {},
+            data: labelData[0].data[0]
+        },
+        {
+            type: 'line',
+            smooth: true, // 圆滑的线
+            name: '今日',
+            stack: '总量',
+            areaStyle: {},
+            data: labelData[0].data[1]
+        }
+        ]
+    };
+
+    myChart.setOption(option);
+
+    // 4.让图表随屏幕自适应
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    })
+
+    // 获取所有的a元素  
+    var anchors = document.querySelectorAll('.data_overview_today_chart_content a');
+    // 初始化第一个a元素的高亮样式
+    if (anchors.length > 0) {
+        anchors[0].classList.add('a-active');
+    }
+
+    // 为每个 a 元素添加点击事件监听器  
+    anchors.forEach(function (anchor, index) {
+        anchor.addEventListener('click', function (event) {
+            // 阻止默认的链接行为（如果a元素是链接）  
+            event.preventDefault();
+
+            // 点击a之后 根据当前a的索引号 找到对应的 labelData 相关对象  
+            var obj = labelData[index];
+            option.series[0].data = obj.data[0];
+            option.series[1].data = obj.data[1];
+
+            // 重新渲染图表
+            myChart.setOption(option);
+
+            // 移除其他 a 元素的高亮样式  
+            anchors.forEach(function (otherAnchor) {
+                otherAnchor.classList.remove('a-active');
+            });
+
+            // 给当前 a 元素添加高亮样式  
+            this.classList.add('a-active');
+        });
+    });
+
+    // 需要重新渲染
+    myChart.setOption(option);
+})();
+

@@ -18,9 +18,10 @@ header {
     border-bottom-right-radius: 10px;
 }
 header img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 25px;
+    margin-top: 10px;
     margin-left: 50px;
     background-color: transparent; /* 设置背景为透明 */
 }
@@ -61,10 +62,10 @@ header .tab button.active {
 .overview_tab_links.active {
     background: rgb(243,251,255);
     color: rgb(3, 124, 245);
-    position: relative; /* 为伪元素定位做准备 */
+    position: relative; /* 伪元素定位 */
 }
 .overview_tab_links.active::after {
-    content: ""; /* 必须，定义伪元素的内容为空 */
+    content: ""; /* 定义伪元素的内容为空 */
     position: absolute; /* 绝对定位 */
     right: 0; /* 右侧对齐 */
     top: 0; /* 顶部对齐 */
@@ -101,15 +102,68 @@ header .tab button.active {
     margin-right: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
 }
 .data_overview_today {
     width: calc(100% - 40px);
     height: calc(100% - 90px);
-    background: rgb(255,255,255);
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 5px;
+    display: flex;
 }
+.data_overview_today_chart {
+    flex: 1;
+    background: rgb(255,255,255);
+    margin-right: 10px;
+    width: calc(100% - 10px);
+}
+.data_overview_today_chart_title {
+    background: rgb(255,255,255);
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+    font-size: 10px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+}
+.data_overview_today_chart_content {
+    background: rgb(255,255,255);
+    height: calc(100% - 50px);
+}
+.data_overview_today_chart_content_label {
+    background: rgb(255,255,255);
+    height: 20px;
+}
+.data_overview_today_chart_content_label a {
+    background: rgb(255,255,255);
+    color: inherit; /* 继承父元素的颜色 */
+    text-decoration: none; /* 移除下划线 */
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+    font-size: 10px;
+}
+.data_overview_today_chart_content_label .a-active {
+    color: rgb(3, 124, 245);
+}
+.data_overview_today_chart_content_item {
+    background: rgb(255,255,255);
+    height: calc(100% - 20px);
+}
+.data_overview_today_detail {
+    flex: 1;
+    background: rgb(255,255,255);
+    display: flex;
+}
+.data_overview_today_chart_content_item_top {
+    background: rgb(255,255,255);
+    
+}
+.data_overview_today_chart_content_item_bottom {
+    background: rgb(255,255,255);
+}
+
 .data_overview_core_metrics {
     flex: 1;
     width: calc(100% - 40px);
@@ -121,6 +175,7 @@ header .tab button.active {
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
 /* 页脚 */
 footer {
     text-align: center;
