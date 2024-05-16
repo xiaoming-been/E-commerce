@@ -23,17 +23,17 @@ header img {
     border-radius: 25px;
     margin-top: 10px;
     margin-left: 50px;
-    background-color: transparent; /* 设置背景为透明 */
+    background-color: rgb(255,255,255);
 }
 header .title_name {
     margin-left: 50px;
     margin-top: 19px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
-    background-color: transparent;
+    background-color: rgb(255,255,255);
 }
 header .tab {
-    background-color: transparent;
+    background-color: rgb(255,255,255);
 }
 header .tab button {
     background-color: transparent;
@@ -74,7 +74,7 @@ header .tab button.active {
     background: rgb(3, 124, 245); /* 竖线的颜色 */
 }
 .over_view_tab button {
-    background-color: transparent; /* 设置背景为透明 */
+    background-color: rgb(255,255,255); /* 设置背景为透明 */
     border: none; /* 去掉边框 */
     outline: none;/* 去掉轮廓 */
     height: 50px;
@@ -150,6 +150,10 @@ header .tab button.active {
 .data_overview_today_chart_content_item {
     background: rgb(255,255,255);
     height: calc(100% - 20px);
+}
+/* 今日概况-面积图-提示框样式 */
+.data_overview_today_chart_content_item div, .data_overview_today_chart_content_item div span {
+    background: rgb(255,255,255);
 }
 .data_overview_today_detail {
     flex: 1;

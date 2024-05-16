@@ -80,7 +80,9 @@ function open_overview_tab(evt, tabName) {
         // 修改两条线的颜色
         color: ['rgb(151,172,206)', 'rgb(222,171,164)'],
         tooltip: {
-            trigger: 'axis'
+            trigger: 'axis',
+            backgroundColor: 'rgba(255,255,255)',
+            background: 'rgba(255,255,255)',
         },
         // 图例组件
         legend: {
@@ -122,7 +124,7 @@ function open_overview_tab(evt, tabName) {
             },
             splitLine: {
                 lineStyle: {
-                    // color: "rgb(244,244,244)"
+                    color: "rgb(244,244,244)"
                 }
             }
         },
