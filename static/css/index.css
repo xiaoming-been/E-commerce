@@ -172,7 +172,8 @@ header .tab button.active {
     background: rgb(255,255,255);
     position: relative; /* 伪元素定位 */
     display: flex;
-    flex-direction: column; /* 将选项卡垂直排列 */
+    flex-direction: column;
+    justify-content: space-around;
 }
 .data_overview_today_chart_content_item_top_left::after {
     content: ""; /* 定义伪元素的内容为空 */
@@ -188,19 +189,30 @@ header .tab button.active {
     flex: 1;
     background: rgb(255,255,255);
     display: flex;
-    flex-direction: column; /* 将选项卡垂直排列 */
+    flex-direction: column;
+    justify-content: space-around;
+}
+.data_overview_today_chart_content_item_top_left_content {
+    text-align: center;
+    background: rgb(255,255,255);
+}
+.data_overview_today_chart_content_item_top_right_content {
+    text-align: center;
+    background: rgb(255,255,255);
 }
 .data_overview_today_chart_content_item_top_left h6, .data_overview_today_chart_content_item_top_right h6 {
-    flex: 1;
     text-align: center;
     background: rgb(255,255,255);
-    margin-top: 20%;
+    height: 20px;
 }
 .data_overview_today_chart_content_item_top_left p, .data_overview_today_chart_content_item_top_right p {
-    flex: 1;
     text-align: center;
     background: rgb(255,255,255);
-    margin-top: -20%;
+    margin-top: 10px;
+    height: 20px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+    font-size: 20px;
 }
 .data_overview_today_chart_content_item_bottom {
     background: rgb(255,255,255);
