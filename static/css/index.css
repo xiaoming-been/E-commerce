@@ -167,7 +167,14 @@ header .tab button.active {
     margin-bottom: 5px;
     display: flex;
 }
-.data_overview_today_chart_content_item_top_left {
+.data_overview_today_chart_content_item_bottom {
+    background: rgb(255,255,255);
+    height: calc(100% - 5px);
+    margin-top: 5px;
+    width: calc(100% - 5px);
+    display: flex;
+}
+.data_overview_today_chart_content_item_top_left, .data_overview_today_chart_content_item_bottom_left {
     flex: 1;
     background: rgb(255,255,255);
     position: relative; /* 伪元素定位 */
@@ -175,7 +182,7 @@ header .tab button.active {
     flex-direction: column;
     justify-content: space-around;
 }
-.data_overview_today_chart_content_item_top_left::after {
+.data_overview_today_chart_content_item_top_left::after, .data_overview_today_chart_content_item_bottom_left::after {
     content: ""; /* 定义伪元素的内容为空 */
     position: absolute; /* 绝对定位 */
     right: 0; /* 右侧对齐 */
@@ -185,27 +192,29 @@ header .tab button.active {
     height: calc(100% - 20px); /* 竖线的高度 */
     background: rgb(242,242,242); /* 竖线的颜色 */
 }
-.data_overview_today_chart_content_item_top_right {
+.data_overview_today_chart_content_item_top_right, .data_overview_today_chart_content_item_bottom_right {
     flex: 1;
     background: rgb(255,255,255);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.data_overview_today_chart_content_item_top_left_content {
+.data_overview_today_chart_content_item_top_left_content, .data_overview_today_chart_content_item_bottom_left_content {
     text-align: center;
     background: rgb(255,255,255);
 }
-.data_overview_today_chart_content_item_top_right_content {
+.data_overview_today_chart_content_item_top_right_content, .data_overview_today_chart_content_item_bottom_right_content {
     text-align: center;
     background: rgb(255,255,255);
 }
-.data_overview_today_chart_content_item_top_left h6, .data_overview_today_chart_content_item_top_right h6 {
+.data_overview_today_chart_content_item_top_left h6, .data_overview_today_chart_content_item_top_right h6,
+.data_overview_today_chart_content_item_bottom_left h6, .data_overview_today_chart_content_item_bottom_right h6 {
     text-align: center;
     background: rgb(255,255,255);
     height: 20px;
 }
-.data_overview_today_chart_content_item_top_left p, .data_overview_today_chart_content_item_top_right p {
+.data_overview_today_chart_content_item_top_left p, .data_overview_today_chart_content_item_top_right p,
+.data_overview_today_chart_content_item_bottom_left p, .data_overview_today_chart_content_item_bottom_right p {
     text-align: center;
     background: rgb(255,255,255);
     margin-top: 10px;
@@ -213,12 +222,6 @@ header .tab button.active {
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
     font-size: 20px;
-}
-.data_overview_today_chart_content_item_bottom {
-    background: rgb(255,255,255);
-    height: calc(100% - 5px);
-    margin-top: 5px;
-    width: calc(100% - 5px);
 }
 
 .data_overview_core_metrics {
