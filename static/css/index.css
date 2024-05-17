@@ -119,7 +119,7 @@ header .tab button.active {
     margin-right: 10px;
     width: calc(100% - 10px);
 }
-.data_overview_today_chart_title {
+.data_overview_today_chart_title, .data_overview_core_metrics_title {
     background: rgb(255,255,255);
     height: 50px;
     text-align: left;
@@ -128,15 +128,15 @@ header .tab button.active {
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
 }
-.data_overview_today_chart_content {
+.data_overview_today_chart_content, .data_overview_core_metrics_content {
     background: rgb(255,255,255);
     height: calc(100% - 50px);
 }
-.data_overview_today_chart_content_label {
+.data_overview_today_chart_content_label, .data_overview_core_metrics_content_label {
     background: rgb(255,255,255);
     height: 20px;
 }
-.data_overview_today_chart_content_label a {
+.data_overview_today_chart_content_label a, .data_overview_core_metrics_content_label a {
     background: rgb(255,255,255);
     color: inherit; /* 继承父元素的颜色 */
     text-decoration: none; /* 移除下划线 */
@@ -144,15 +144,16 @@ header .tab button.active {
     color: black; /* 字体黑色 */
     font-size: 10px;
 }
-.data_overview_today_chart_content_label .a-active {
+.data_overview_today_chart_content_label .a-active, .data_overview_core_metrics_content_label .a-active {
     color: rgb(3, 124, 245);
 }
-.data_overview_today_chart_content_item {
+.data_overview_today_chart_content_item, .data_overview_core_metrics_content_item {
     background: rgb(255,255,255);
     height: calc(100% - 20px);
 }
 /* 今日概况-面积图-提示框样式 */
-.data_overview_today_chart_content_item div, .data_overview_today_chart_content_item div span {
+.data_overview_today_chart_content_item div, .data_overview_today_chart_content_item div span,
+.data_overview_core_metrics_content_item div, .data_overview_core_metrics_content_item div span {
     background: rgb(255,255,255);
 }
 .data_overview_today_detail {

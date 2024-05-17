@@ -188,4 +188,119 @@ function open_overview_tab(evt, tabName) {
     // 需要重新渲染
     myChart.setOption(option);
 })();
+// 数据总览-核心指标-折线图
+(function () {
+    var labelData = [
+        {
+            label: "访问页面数(PV)",
+            data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]
+        },
+        {
+            label: "访客数(UV)",
+            data: [123, 175, 112, 197, 121, 67, 98, 21, 43, 64, 76, 38]
+        },
+        {
+            label: "下单金额",
+            data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]
+        },
+        {
+            label: "下单次数",
+            data: [123, 175, 112, 197, 121, 67, 98, 21, 43, 64, 76, 38]
+        },
+        {
+            label: "下单人数",
+            data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]
+        }
+    ];
+
+    var myChart = echarts.init(document.querySelector(".data_overview_core_metrics_content_item"));
+
+    var option = {
+        backgroundColor: 'rgb(255,255,255)',
+        color: ['rgb(222,171,164)'],
+        tooltip: {
+            trigger: 'axis',
+            backgroundColor: 'rgba(255,255,255)',
+            background: 'rgba(255,255,255)',
+        },
+        legend: {
+            right: 'center',
+        },
+        grid: {
+            top: "20%",
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true,
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['0:00', '2:00', '4:00', '6:00', '8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '23:00'],
+            axisTick: {
+                show: true
+            },
+            axisLabel: {},
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisTick: {
+                show: false
+            },
+            axisLabel: {},
+            axisLine: {
+                show: false
+            },
+            splitLine: {
+                lineStyle: {
+                    color: "rgb(244,244,244)"
+                }
+            }
+        },
+        series: [{
+            type: 'line',
+            name: labelData[0].label, // 默认使用第一组数据的标签
+            stack: '总量',
+            data: labelData[0].data // 默认使用第一组数据
+        }]
+    };
+
+    myChart.setOption(option);
+
+    // 添加点击事件
+    var labels = document.querySelectorAll('.data_overview_core_metrics_content_label a');
+    labels.forEach(function (label, index) {
+        label.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // 移除其他选项卡的高亮样式
+            labels.forEach(function (otherLabel) {
+                otherLabel.classList.remove('a-active');
+            });
+
+            // 给当前选项卡添加高亮样式
+            label.classList.add('a-active');
+
+            // 更新图表数据
+            myChart.setOption({
+                series: [{
+                    name: labelData[index].label,
+                    data: labelData[index].data
+                }]
+            });
+        });
+    });
+    // 初始化时给第一个选项卡添加高亮样式
+    labels[0].classList.add('a-active');
+})();
+
+
+
+
+
+
+
 
