@@ -236,7 +236,7 @@ function open_overview_tab(evt, tabName) {
         xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['0:00', '2:00', '4:00', '6:00', '8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '23:00'],
+            data: ['5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9', '5.10', '5.11', '5.12'],
             axisTick: {
                 show: true
             },
@@ -295,6 +295,10 @@ function open_overview_tab(evt, tabName) {
     });
     // 初始化时给第一个选项卡添加高亮样式
     labels[0].classList.add('a-active');
+    // 让图表随屏幕自适应
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    })  
 })();
 
 
