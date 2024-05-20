@@ -175,7 +175,7 @@ function open_overview_tab(evt, tabName) {
             // 重新渲染图表
             myChart.setOption(option);
 
-            // 移除其他 a 元素的高亮样式  
+            // 移除扫码 a 元素的高亮样式  
             anchors.forEach(function (otherAnchor) {
                 otherAnchor.classList.remove('a-active');
             });
@@ -276,7 +276,7 @@ function open_overview_tab(evt, tabName) {
         label.addEventListener('click', function (event) {
             event.preventDefault();
 
-            // 移除其他选项卡的高亮样式
+            // 移除扫码选项卡的高亮样式
             labels.forEach(function (otherLabel) {
                 otherLabel.classList.remove('a-active');
             });
@@ -300,6 +300,286 @@ function open_overview_tab(evt, tabName) {
         myChart.resize();
     })  
 })();
+// 昨日场景值分析
+(function () {
+    var labelData = [
+        {
+            label: "下单金额",
+            data: [
+                { name: "广告", value: 10 },
+                { name: "自营小程序", value: 20 },
+                { name: "扫码小程序", value: 30 },
+                { name: "公众号", value: 40 },
+                { name: "快捷入口", value: 50 },
+                { name: "扫码", value: 60 }
+            ]
+        },
+        {
+            label: "下单用户数",
+            data: [
+                { name: "广告", value: 100 },
+                { name: "自营小程序", value: 200 },
+                { name: "扫码小程序", value: 300 },
+                { name: "公众号", value: 400 },
+                { name: "快捷入口", value: 500 },
+                { name: "扫码", value: 600 }
+            ]
+        },
+        {
+            label: "访问页面数",
+            data: [
+                { name: "广告", value: 10 },
+                { name: "自营小程序", value: 20 },
+                { name: "扫码小程序", value: 30 },
+                { name: "公众号", value: 40 },
+                { name: "快捷入口", value: 50 },
+                { name: "扫码", value: 60 }
+            ]
+        },
+        {
+            label: "访客人数",
+            data: [
+                { name: "广告", value: 1 },
+                { name: "自营小程序", value: 2 },
+                { name: "扫码小程序", value: 3 },
+                { name: "公众号", value: 4 },
+                { name: "快捷入口", value: 5 },
+                { name: "扫码", value: 6 }
+            ]
+        }
+    ];
+
+    var myChart = echarts.init(document.querySelector(".data_overview_scene_analysis_content_left_item_chart"));
+
+    var option = {
+        backgroundColor: 'rgb(255,255,255)',
+        // color: ['rgb(222,171,164)'],
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            left: '30px', // 设置图例在左侧
+            orient: 'vertical', // 设置图例的布局为垂直布局
+            top: 'middle', // 设置图例在垂直方向上居中
+            data: labelData[0].data.map(function (item) {
+                return item.name;
+            })
+        },
+        series: [
+            {
+                name: labelData[0].label,
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: labelData[0].data
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+
+    // 添加点击事件
+    var labels = document.querySelectorAll('.data_overview_scene_analysis_content_left_item_label a');
+    labels.forEach(function (label, index) {
+        label.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // 移除其他标签的高亮样式
+            labels.forEach(function (otherLabel) {
+                otherLabel.classList.remove('a-active');
+            });
+
+            // 添加当前标签的高亮样式
+            label.classList.add('a-active');
+
+            // 更新图表数据
+            myChart.setOption({
+                legend: {
+                    data: labelData[index].data.map(function (item) {
+                        return item.name;
+                    })
+                },
+                series: [{
+                    name: labelData[index].label,
+                    data: labelData[index].data
+                }]
+            });
+        });
+    });
+
+    // 初始化时将第一个标签高亮
+    labels[0].classList.add('a-active');
+    // 当窗口大小改变时，调整图表大小
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    })
+})();
+
+// Top5场景值指标趋势图
+(function () {
+    var labelData = [
+        {
+            label: "下单金额",
+            data: [
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
+                { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
+                { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
+                { name: "快捷入口", value: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160] },
+                { name: "扫码", value: [60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170] }
+            ]
+        },
+        {
+            label: "下单用户数",
+            data: [
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
+                { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
+                { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
+                { name: "快捷入口", value: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160] },
+                { name: "扫码", value: [60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170] }
+            ]
+        },
+        {
+            label: "访问页面数",
+            data: [
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
+                { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
+                { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
+                { name: "快捷入口", value: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160] },
+                { name: "扫码", value: [60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170] }
+            ]
+        },
+        {
+            label: "访客人数",
+            data: [
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
+                { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
+                { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
+                { name: "快捷入口", value: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160] },
+                { name: "扫码", value: [60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170] }
+            ]
+        }
+    ];
+
+    var myChart = echarts.init(document.querySelector(".data_overview_scene_analysis_content_right_item_chart"));
+
+    function getSeries(data) {
+        return data.map(function(item) {
+            return {
+                type: 'line',
+                name: item.name,
+                stack: '总量',
+                data: item.value
+            };
+        });
+    }
+
+    var option = {
+        backgroundColor: 'rgb(255,255,255)',
+        color: ['rgb(222,171,164)', 'rgb(126,196,191)', 'rgb(255,207,162)', 'rgb(198,161,223)', 'rgb(159,190,255)', 'rgb(255,159,159)'],
+        tooltip: {
+            trigger: 'axis',
+            backgroundColor: 'rgba(255,255,255)',
+            textStyle: {
+                color: '#000'
+            }
+        },
+        legend: {
+            orient: 'horizontal', // 水平排列
+            right: 'center',
+            itemWidth: 10, // 图例图标宽度
+            itemHeight: 10, // 图例图标高度
+            textStyle: {
+                fontSize: 12 // 图例文字大小
+            }
+        },
+        grid: {
+            top: "20%",
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true,
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9', '5.10', '5.11', '5.12'],
+            axisTick: {
+                show: true
+            },
+            axisLabel: {},
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisTick: {
+                show: false
+            },
+            axisLabel: {},
+            axisLine: {
+                show: false
+            },
+            splitLine: {
+                lineStyle: {
+                    color: "rgb(244,244,244)"
+                }
+            }
+        },
+        series: getSeries(labelData[0].data) // 默认显示第一组数据
+    };
+
+    myChart.setOption(option);
+
+    // 添加点击事件
+    var labels = document.querySelectorAll('.data_overview_scene_analysis_content_right_item_label a');
+    labels.forEach(function (label, index) {
+        label.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // 移除其他选项卡的高亮样式
+            labels.forEach(function (otherLabel) {
+                otherLabel.classList.remove('a-active');
+            });
+
+            // 给当前选项卡添加高亮样式
+            label.classList.add('a-active');
+
+            // 更新图表数据
+            myChart.setOption({
+                series: getSeries(labelData[index].data)
+            });
+        });
+    });
+
+    // 初始化时给第一个选项卡添加高亮样式
+    labels[0].classList.add('a-active');
+    
+    // 让图表随屏幕自适应
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    });
+})();
+
 
 
 

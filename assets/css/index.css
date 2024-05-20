@@ -7,7 +7,6 @@
 }
 body,html {
   width: 100%;
-  /* overflow: hidden; 防止整个页面滚动 */
 }
 /* 头部样式 */
 header {
@@ -90,7 +89,7 @@ header .tab button.active {
     margin-left: 180px;
     height: calc(100% - 50px);
     margin-top: 50px;
-    overflow-y: auto; /* 使内容区域可滚动 */
+    /* overflow-y: auto; 使内容区域可滚动 */
 }
 .overview_tab_content {
     display: flex;
@@ -165,7 +164,9 @@ header .tab button.active {
 }
 /* 今日概况-面积图-提示框样式 */
 .data_overview_today_chart_content_item div, .data_overview_today_chart_content_item div span,
-.data_overview_core_metrics_content_item div, .data_overview_core_metrics_content_item div span {
+.data_overview_core_metrics_content_item div, .data_overview_core_metrics_content_item div span,
+.data_overview_scene_analysis_content_right_item_chart div, .data_overview_scene_analysis_content_right_item_chart div span
+{
     background: rgb(255,255,255);
 }
 .data_overview_today_detail {
@@ -244,11 +245,91 @@ header .tab button.active {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     border-radius: 5px;
 }
 /* 场景分析 */
-
+.data_overview_scene_analysis_content {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+    margin-bottom: 20px;
+}
+.data_overview_scene_analysis_content_left {
+    flex: 1;
+    background: transparent;
+}
+.data_overview_scene_analysis_content_right {
+    flex: 1;
+    background: transparent;
+}
+.data_overview_scene_analysis_content_left_title {
+    background: rgb(255,255,255);
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+    font-size: 10px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+    margin-right: 5px;
+    width: calc(100% - 5px);
+}
+.data_overview_scene_analysis_content_right_title {
+    background: rgb(255,255,255);
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+    font-size: 10px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+    margin-left: 5px;
+    width: calc(100% - 5px);
+}
+.data_overview_scene_analysis_content_left_item {
+    height: 300px;
+    background: rgb(255,255,255);
+    margin-right: 5px;
+    width: calc(100% - 5px);
+}
+.data_overview_scene_analysis_content_right_item {
+    height: 300px;
+    background: rgb(255,255,255);
+    margin-left: 5px;
+    width: calc(100% - 5px);
+}
+.data_overview_scene_analysis_content_left_item_label {
+    height: 20px;
+    background: rgb(255,255,255);
+    margin-right: 5px;
+    width: calc(100% - 5px);
+}
+.data_overview_scene_analysis_content_left_item_chart {
+    height: calc(100% - 20px);
+    background: rgb(255,255,255);
+}
+.data_overview_scene_analysis_content_right_item_chart {
+    margin-top: 20px;
+    height: calc(100% - 40px);
+    background: rgb(255,255,255);
+}
+.data_overview_scene_analysis_content_right_item_label {
+    height: 20px;
+    background: rgb(255,255,255);
+    margin-left: 5px;
+    width: calc(100% - 5px);
+}
+.data_overview_scene_analysis_content_left_item_label a, .data_overview_scene_analysis_content_right_item_label a {
+    background: rgb(255,255,255);
+    color: inherit; /* 继承父元素的颜色 */
+    text-decoration: none; /* 移除下划线 */
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+    font-size: 10px;
+}
+.data_overview_scene_analysis_content_left_item_label .a-active, .data_overview_scene_analysis_content_right_item_label .a-active {
+    color: rgb(3, 124, 245);
+}
 /* 页脚 */
 footer {
     text-align: center;
