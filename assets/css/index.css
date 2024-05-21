@@ -60,7 +60,7 @@ header .tab button.active {
     display: flex;
     flex-direction: column; /* 将选项卡垂直排列 */
     background: rgb(255,255,255);
-    left: 10px;
+    /* left: 10px; */
     position: fixed; /* 固定定位 */
 }
 .overview_tab_links.active {
@@ -329,6 +329,72 @@ header .tab button.active {
 }
 .data_overview_scene_analysis_content_left_item_label .a-active, .data_overview_scene_analysis_content_right_item_label .a-active {
     color: rgb(3, 124, 245);
+}
+/* 商品排行 */
+.data_overview_goods_ranking_label {
+    height: 50px;
+    width: calc(100% - 40px);
+    text-align: left;
+    line-height: 50px;
+    background: rgb(255,255,255);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+}
+.data_overview_goods_ranking_content {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+}
+.access_leaderboards {
+    flex: 1;
+    background: rgb(255,255,255);
+    margin-right: 6px;
+    width: calc(100% - 6px);
+}
+.order_leaderboards {
+    flex: 1;
+    margin-left: 3px;
+    margin-right: 3px;
+    background: rgb(255,255,255);
+    width: calc(100% - 6px);
+}
+.sales_leaderboards {
+    flex: 1;
+    margin-left: 6px;
+    background: rgb(255,255,255);
+    width: calc(100% - 6px);
+}
+.access_leaderboards_title, .order_leaderboards_title, .sales_leaderboards_title {
+    background: rgb(255,255,255);
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+    font-size: 10px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+}
+.access_leaderboards_table {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+    text-align: center;
+    font-size: 10px;
+    border-collapse: collapse;
+}
+.access_leaderboards_table thead {
+
+}
+.access_leaderboards_table tr:nth-child(odd) {
+    background-color: red;
+}
+.access_leaderboards_table  tr:nth-child(even) {
+    background-color: blue;
 }
 /* 页脚 */
 footer {
