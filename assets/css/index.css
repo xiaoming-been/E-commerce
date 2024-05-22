@@ -331,6 +331,10 @@ header .tab button.active {
     color: rgb(3, 124, 245);
 }
 /* 商品排行 */
+.data_overview_goods_ranking {
+    display: flex;
+    flex-direction: column;
+}
 .data_overview_goods_ranking_label {
     height: 50px;
     width: calc(100% - 40px);
@@ -379,22 +383,84 @@ header .tab button.active {
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
 }
-.access_leaderboards_table {
+.access_leaderboards_table, .order_leaderboards_table, .sales_leaderboards_table {
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100% - 20px);
     text-align: center;
     font-size: 10px;
     border-collapse: collapse;
+    background: rgb(255,255,255);
+    border: 1px solid rgb(164,195,213);
 }
-.access_leaderboards_table thead {
-
+.access_leaderboards_table th,
+.access_leaderboards_table td,
+.order_leaderboards_table th,
+.order_leaderboards_table td,
+.sales_leaderboards_table th,
+.sales_leaderboards_table td {
+    border: 1px solid rgb(164,195,213); /* 设置单元格边框 */
 }
-.access_leaderboards_table tr:nth-child(odd) {
-    background-color: red;
+.access_leaderboards_table thead,
+.order_leaderboards_table thead,
+.sales_leaderboards_table thead {
+    color: rgb(164,195,213);
+    height: 20px;
 }
-.access_leaderboards_table  tr:nth-child(even) {
-    background-color: blue;
+.access_leaderboards_table img,
+.order_leaderboards_table img,
+.sales_leaderboards_table img {
+    width: 75%;
+    height: 45px;
+    border-radius: 5px;
+}
+.access_leaderboards_table tbody tr:nth-of-type(odd) td:first-child,
+.access_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(2),
+.access_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(3),
+.order_leaderboards_table tbody tr:nth-of-type(odd) td:first-child,
+.order_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(2),
+.order_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(3),
+.sales_leaderboards_table tbody tr:nth-of-type(odd) td:first-child,
+.sales_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(2),
+.sales_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(3) {
+    background: rgb(255,255,255); /* 奇数行背景颜色 */
+}
+.access_leaderboards_pages,
+.order_leaderboards_pages,
+.sales_leaderboards_pages {
+    margin-top: 20px;
+    float: right;
+    overflow: hidden; /* 清除内部浮动 */
+    background: rgb(255,255,255);
+    margin-bottom: 20px;
+}
+.access_leaderboards_pages_left, .access_leaderboards_pages_center, .access_leaderboards_pages_right,
+.order_leaderboards_pages_left, .order_leaderboards_pages_center, .order_leaderboards_pages_right,
+.sales_leaderboards_pages_left, .sales_leaderboards_pages_center, .sales_leaderboards_pages_right {
+    background: rgb(255,255,255);
+    height: 20px; 
+    float: left; /* 左浮动以水平排列 */
+    margin-right: 10px;
+}
+.access_leaderboards_pages_left, .access_leaderboards_pages_right,
+.order_leaderboards_pages_left, .order_leaderboards_pages_right,
+.sales_leaderboards_pages_left, .sales_leaderboards_pages_right {
+    border: 1px solid rgb(242, 242, 242);
+}
+/* 公众号分析 */
+.data_overview_goods_ranking_label {
+    height: 50px;
+    width: calc(100% - 40px);
+    text-align: left;
+    line-height: 50px;
+    background: rgb(255,255,255);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
 }
 /* 页脚 */
 footer {
