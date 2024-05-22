@@ -7,11 +7,13 @@
 }
 body,html {
   width: 100%;
+  min-width: 1024px;
 }
 /* 头部样式 */
 header {
     height: 50px;
     width: 100%;
+    min-width: 1024px;
     display: flex;
     background: rgb(255,255,255);
     border-bottom-left-radius: 10px;
