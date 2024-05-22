@@ -134,7 +134,7 @@ header .tab button.active {
     height: 50px;
     text-align: left;
     line-height: 50px;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
 }
@@ -153,7 +153,7 @@ header .tab button.active {
     text-decoration: none; /* 移除下划线 */
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
-    font-size: 10px;
+    font-size: 15px;
 }
 .data_overview_today_chart_content_label .a-active, .data_overview_core_metrics_content_label .a-active {
     color: rgb(3, 124, 245);
@@ -269,7 +269,7 @@ header .tab button.active {
     height: 50px;
     text-align: left;
     line-height: 50px;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
     margin-right: 5px;
@@ -280,7 +280,7 @@ header .tab button.active {
     height: 50px;
     text-align: left;
     line-height: 50px;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
     margin-left: 5px;
@@ -325,7 +325,7 @@ header .tab button.active {
     text-decoration: none; /* 移除下划线 */
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
-    font-size: 10px;
+    font-size: 15px;
 }
 .data_overview_scene_analysis_content_left_item_label .a-active, .data_overview_scene_analysis_content_right_item_label .a-active {
     color: rgb(3, 124, 245);
@@ -379,7 +379,7 @@ header .tab button.active {
     height: 50px;
     text-align: left;
     line-height: 50px;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
 }
@@ -388,7 +388,7 @@ header .tab button.active {
     margin-right: 10px;
     width: calc(100% - 20px);
     text-align: center;
-    font-size: 10px;
+    font-size: 15px;
     border-collapse: collapse;
     background: rgb(255,255,255);
     border: 1px solid rgb(164,195,213);
@@ -410,7 +410,7 @@ header .tab button.active {
 .access_leaderboards_table img,
 .order_leaderboards_table img,
 .sales_leaderboards_table img {
-    width: 75%;
+    width: 75px;
     height: 45px;
     border-radius: 5px;
 }
@@ -424,6 +424,11 @@ header .tab button.active {
 .sales_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(2),
 .sales_leaderboards_table tbody tr:nth-of-type(odd) td:nth-child(3) {
     background: rgb(255,255,255); /* 奇数行背景颜色 */
+}
+.access_leaderboards_table tbody td,
+.order_leaderboards_table tbody td,
+.sales_leaderboards_table tbody td {
+    height: 60px;
 }
 .access_leaderboards_pages,
 .order_leaderboards_pages,
@@ -448,7 +453,7 @@ header .tab button.active {
     border: 1px solid rgb(242, 242, 242);
 }
 /* 公众号分析 */
-.data_overview_goods_ranking_label {
+.data_overview_public_number_label {
     height: 50px;
     width: calc(100% - 40px);
     text-align: left;
@@ -461,6 +466,66 @@ header .tab button.active {
     border-radius: 5px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
+}
+.graphic_analysis, .fan_analysis {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    background: rgb(255,255,255);
+}
+.graphic_analysis_title, .fan_analysis_title {
+    background: rgb(255,255,255);
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */    
+}
+.graphic_analysis_content, .fan_analysis_content {
+    display: flex;
+    height: 120px;
+}
+.graphic_analysis_content_left, .graphic_analysis_content_middle, .graphic_analysis_content_right,
+.fan_analysis_content_left, .fan_analysis_content_middle, .fan_analysis_content_right {
+    flex: 1;
+    background: rgb(255,255,255);
+    position: relative; /* 伪元素定位 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.graphic_analysis_content_left::after, .graphic_analysis_content_middle::after,
+.fan_analysis_content_left::after, .fan_analysis_content_middle::after {
+    content: ""; /* 定义伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    right: 0; /* 右侧对齐 */
+    top: 10px; /* 顶部对齐 */
+    bottom: 10px;
+    width: 2px; /* 竖线的宽度 */
+    height: calc(100% - 20px); /* 竖线的高度 */
+    background: rgb(242,242,242); /* 竖线的颜色 */
+}
+.graphic_analysis_content_left_content, .graphic_analysis_content_middle_content, .graphic_analysis_content_right_content,
+.fan_analysis_content_left_content, .fan_analysis_content_middle_content, .fan_analysis_content_right_content {
+    text-align: center;
+    background: rgb(255,255,255);
+}
+.graphic_analysis_content_left h6, .graphic_analysis_content_middle h6, .graphic_analysis_content_right h6,
+.fan_analysis_content_left h6, .fan_analysis_content_middle h6, .fan_analysis_content_right h6 {
+    text-align: center;
+    background: rgb(255,255,255);
+    height: 20px;
+}
+.graphic_analysis_content_left p, .graphic_analysis_content_middle p, .graphic_analysis_content_right p,
+.fan_analysis_content_left p, .fan_analysis_content_middle p, .fan_analysis_content_right p {
+    text-align: center;
+    background: rgb(255,255,255);
+    margin-top: 10px;
+    height: 20px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+    font-size: 20px;
 }
 /* 页脚 */
 footer {
