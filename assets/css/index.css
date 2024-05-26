@@ -477,9 +477,9 @@ header .tab button.active {
 }
 .graphic_analysis_title, .fan_analysis_title {
     background: rgb(255,255,255);
-    height: 50px;
+    height: 40px;
     text-align: left;
-    line-height: 50px;
+    line-height: 40px;
     font-size: 15px;
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */    
@@ -502,10 +502,10 @@ header .tab button.active {
     content: ""; /* 定义伪元素的内容为空 */
     position: absolute; /* 绝对定位 */
     right: 0; /* 右侧对齐 */
-    top: 10px; /* 顶部对齐 */
-    bottom: 10px;
+    /*top: 10px; /* 顶部对齐 */
+    bottom: 40px;
     width: 2px; /* 竖线的宽度 */
-    height: calc(100% - 20px); /* 竖线的高度 */
+    height: calc(100% - 40px); /* 竖线的高度 */
     background: rgb(242,242,242); /* 竖线的颜色 */
 }
 .graphic_analysis_content_left_content, .graphic_analysis_content_middle_content, .graphic_analysis_content_right_content,
