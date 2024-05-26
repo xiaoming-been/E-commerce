@@ -529,6 +529,21 @@ header .tab button.active {
     color: black; /* 字体黑色 */
     font-size: 20px;
 }
+/* 实时分析 */
+.overview_analyze_label {
+    height: 50px;
+    width: calc(100% - 40px);
+    text-align: left;
+    line-height: 50px;
+    background: rgb(255,255,255);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;  /* 字体加粗 */
+    color: black; /* 字体黑色 */
+}
 /* 页脚 */
 footer {
     text-align: center;
