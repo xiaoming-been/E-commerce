@@ -495,7 +495,7 @@ header .tab button.active {
     position: relative; /* 伪元素定位 */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 .graphic_analysis_content_left::after, .graphic_analysis_content_middle::after,
 .fan_analysis_content_left::after, .fan_analysis_content_middle::after {
@@ -515,13 +515,13 @@ header .tab button.active {
 }
 .graphic_analysis_content_left h6, .graphic_analysis_content_middle h6, .graphic_analysis_content_right h6,
 .fan_analysis_content_left h6, .fan_analysis_content_middle h6, .fan_analysis_content_right h6 {
-    text-align: center;
+    /* text-align: center; */
     background: rgb(255,255,255);
     height: 20px;
 }
 .graphic_analysis_content_left p, .graphic_analysis_content_middle p, .graphic_analysis_content_right p,
 .fan_analysis_content_left p, .fan_analysis_content_middle p, .fan_analysis_content_right p {
-    text-align: center;
+    /* text-align: center; */
     background: rgb(255,255,255);
     margin-top: 10px;
     height: 20px;
