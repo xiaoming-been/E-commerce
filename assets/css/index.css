@@ -544,6 +544,88 @@ header .tab button.active {
     font-weight: bold;  /* 字体加粗 */
     color: black; /* 字体黑色 */
 }
+.overview_analyze_content {
+    display: flex;
+}
+.overview_analyze_content_label, .overview_analyze_content_date_select {
+    flex: 1;
+}
+.overview_analyze_content_title {
+    background: rgb(255,255,255);
+    margin-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.overview_analyze_content_date {
+    background: rgb(255,255,255);
+    margin-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.overview_analyze_content_date_select {
+    background: rgb(255,255,255);
+    height: 60px;
+    line-height: 60px;
+    text-align: right;
+    margin-right: 20px;
+    width: calc(100% - 20px);
+}
+.overview_analyze_content_date_select input {
+    border: 1px solid rgb(217,220,255);
+    background: rgb(255,255,255);
+}
+.overview_analyze_content_item {
+    background: rgb(255,255,255);
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+}
+.overview_analyze_content_item_top {
+    background: rgb(255,255,255);
+    height: 100px;
+}
+.overview_analyze_content_item_top ul {
+    display: flex;
+    background: rgb(255,255,255);
+    text-align: center;
+    height: 100%;
+}
+.overview_analyze_content_item_top ul li {
+    height: 100%;
+    flex: 1;
+    background: rgb(255,255,255);
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 伪元素定位 */
+}
+.overview_analyze_content_item_top ul li:not(:last-child)::after {
+    content: ""; /* 定义伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    right: 0; /* 右侧对齐 */
+    top: 10px; /* 顶部对齐 */
+    bottom: 10px;
+    width: 2px; /* 竖线的宽度 */
+    height: calc(100% - 20px); /* 竖线的高度 */
+    background: rgb(242,242,242); /* 竖线的颜色 */
+}
+.li_content {
+    text-align: center;
+    background: rgb(255,255,255);
+}
+.overview_analyze_content_item_top ul li h6, .overview_analyze_content_item_top ul li p {
+    background: rgb(255,255,255);
+    height: 20px;
+    text-align: center;
+}
+.overview_analyze_content_item_top ul li p {
+    margin-top: 10px;
+}
 /* 页脚 */
 footer {
     text-align: center;

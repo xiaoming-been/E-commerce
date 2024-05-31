@@ -298,7 +298,7 @@ function open_overview_tab(evt, tabName) {
     // 让图表随屏幕自适应
     window.addEventListener('resize', function () {
         myChart.resize();
-    })  
+    })
 })();
 // 昨日场景值分析
 (function () {
@@ -436,7 +436,7 @@ function open_overview_tab(evt, tabName) {
         {
             label: "下单金额",
             data: [
-                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120] },
                 { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
                 { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
                 { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
@@ -447,7 +447,7 @@ function open_overview_tab(evt, tabName) {
         {
             label: "下单用户数",
             data: [
-                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120] },
                 { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
                 { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
                 { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
@@ -458,7 +458,7 @@ function open_overview_tab(evt, tabName) {
         {
             label: "访问页面数",
             data: [
-                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120] },
                 { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
                 { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
                 { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
@@ -469,7 +469,7 @@ function open_overview_tab(evt, tabName) {
         {
             label: "访客人数",
             data: [
-                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]},
+                { name: "广告", value: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120] },
                 { name: "自营小程序", value: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130] },
                 { name: "扫码小程序", value: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140] },
                 { name: "公众号", value: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150] },
@@ -482,7 +482,7 @@ function open_overview_tab(evt, tabName) {
     var myChart = echarts.init(document.querySelector(".data_overview_scene_analysis_content_right_item_chart"));
 
     function getSeries(data) {
-        return data.map(function(item) {
+        return data.map(function (item) {
             return {
                 type: 'line',
                 name: item.name,
@@ -573,12 +573,14 @@ function open_overview_tab(evt, tabName) {
 
     // 初始化时给第一个选项卡添加高亮样式
     labels[0].classList.add('a-active');
-    
+
     // 让图表随屏幕自适应
     window.addEventListener('resize', function () {
         myChart.resize();
     });
 })();
+
+
 
 
 
