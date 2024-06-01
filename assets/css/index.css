@@ -580,19 +580,26 @@ header .tab button.active {
     background: rgb(255,255,255);
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
     width: calc(100% - 40px);
 }
-.overview_analyze_content_item_top {
+.overview_analyze_content_item_top, 
+.overview_analyze_content_item_middle,
+.overview_analyze_content_item_bottom {
     background: rgb(255,255,255);
     height: 100px;
 }
-.overview_analyze_content_item_top ul {
+.overview_analyze_content_item_top ul,
+.overview_analyze_content_item_middle ul,
+.overview_analyze_content_item_bottom ul {
     display: flex;
     background: rgb(255,255,255);
     text-align: center;
     height: 100%;
 }
-.overview_analyze_content_item_top ul li {
+.overview_analyze_content_item_top ul li,
+.overview_analyze_content_item_middle ul li,
+.overview_analyze_content_item_bottom ul li {
     height: 100%;
     flex: 1;
     background: rgb(255,255,255);
@@ -604,7 +611,18 @@ header .tab button.active {
     align-items: center;
     position: relative; /* 伪元素定位 */
 }
-.overview_analyze_content_item_top ul li:not(:last-child)::after {
+.overview_analyze_content_item_top ul li:not(:last-child)::after,
+.overview_analyze_content_item_middle ul li:not(:last-child)::after {
+    content: ""; /* 定义伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    right: 0; /* 右侧对齐 */
+    top: 10px; /* 顶部对齐 */
+    bottom: 10px;
+    width: 2px; /* 竖线的宽度 */
+    height: calc(100% - 20px); /* 竖线的高度 */
+    background: rgb(242,242,242); /* 竖线的颜色 */
+}
+.overview_analyze_content_item_bottom ul li:first-child::after {
     content: ""; /* 定义伪元素的内容为空 */
     position: absolute; /* 绝对定位 */
     right: 0; /* 右侧对齐 */
@@ -618,12 +636,16 @@ header .tab button.active {
     text-align: center;
     background: rgb(255,255,255);
 }
-.overview_analyze_content_item_top ul li h6, .overview_analyze_content_item_top ul li p {
+.overview_analyze_content_item_top ul li h6, .overview_analyze_content_item_top ul li p,
+.overview_analyze_content_item_middle ul li h6, .overview_analyze_content_item_middle ul li p,
+.overview_analyze_content_item_bottom ul li h6, .overview_analyze_content_item_bottom ul li p {
     background: rgb(255,255,255);
     height: 20px;
     text-align: center;
 }
-.overview_analyze_content_item_top ul li p {
+.overview_analyze_content_item_top ul li p,
+.overview_analyze_content_item_middle ul li p,
+.overview_analyze_content_item_bottom ul li p {
     margin-top: 10px;
 }
 /* 页脚 */
