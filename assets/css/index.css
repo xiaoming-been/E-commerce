@@ -648,6 +648,55 @@ header .tab button.active {
 .overview_analyze_content_item_bottom ul li p {
     margin-top: 10px;
 }
+.overview_analyze_content_chart {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+}
+.overview_analyze_content_chart_left {
+    flex: 1;
+    margin-right: 5px;
+    width: calc(100% - 5px);
+    background: rgb(255,255,255);
+    display: flex;
+}
+.overview_analyze_content_chart_right {
+    flex: 1;
+    margin-left: 5px;
+    width: calc(100% - 5px);
+    background: rgb(255,255,255);
+    display: flex;
+}
+.overview_analyze_content_chart_left_title, .overview_analyze_content_chart_right_title,
+.overview_analyze_content_chart_left_select, .overview_analyze_content_chart_right_select {
+    flex: 1;
+    display: flex;
+    background: rgb(255,255,255);
+}
+.overview_analyze_content_chart_left_title_label, .overview_analyze_content_chart_left_title_select,
+.overview_analyze_content_chart_right_title_label, .overview_analyze_content_chart_right_title_select {
+    flex: 1;
+    background: rgb(255,255,255);
+}
+.overview_analyze_content_chart_left_title_label_content, .overview_analyze_content_chart_left_title_label_date,
+.overview_analyze_content_chart_right_title_label_content, .overview_analyze_content_chart_right_title_label_date {
+    background: rgb(255,255,255);
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.overview_analyze_content_chart_left_title_select, .overview_analyze_content_chart_right_title_select {
+    background: rgb(255,255,255);
+    height: 60px;
+    line-height: 60px;
+    text-align: right;
+}
+.overview_analyze_content_chart_left_title_select input, .overview_analyze_content_chart_right_title_select input {
+    border: 1px solid rgb(217,220,255);
+    background: rgb(255,255,255);
+}
 /* 页脚 */
 footer {
     text-align: center;
