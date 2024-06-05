@@ -661,6 +661,7 @@ header .tab button.active {
     width: calc(100% - 5px);
     background: rgb(255,255,255);
     display: flex;
+    flex-direction: column;
 }
 .overview_analyze_content_chart_right {
     flex: 1;
@@ -668,6 +669,7 @@ header .tab button.active {
     width: calc(100% - 5px);
     background: rgb(255,255,255);
     display: flex;
+    flex-direction: column;
 }
 .overview_analyze_content_chart_left_title, .overview_analyze_content_chart_right_title,
 .overview_analyze_content_chart_left_select, .overview_analyze_content_chart_right_select {
@@ -696,6 +698,32 @@ header .tab button.active {
 .overview_analyze_content_chart_left_title_select input, .overview_analyze_content_chart_right_title_select input {
     border: 1px solid rgb(217,220,255);
     background: rgb(255,255,255);
+}
+.overview_analyze_content_chart_left_content, .overview_analyze_content_chart_right_content {
+    background: rgb(255,255,255);
+    height: 300px;
+}
+.overview_analyze_content_chart_left_content_label, .overview_analyze_content_chart_right_content_label {
+    background: rgb(255,255,255);
+    height: 25px;
+}
+.overview_analyze_content_chart_left_content_label button, .overview_analyze_content_chart_right_content_label button {
+    background: rgb(255,255,255);
+    height: 25px;
+    width: 100px;
+}
+.overview_analyze_content_chart_left_content_label button:first-child,
+.overview_analyze_content_chart_right_content_label button:first-child {
+    border: 1px solid rgb(217,220,255);
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.overview_analyze_content_chart_left_content_label button:nth-child(2),
+.overview_analyze_content_chart_right_content_label button:nth-child(2) {
+    border: 1px solid rgb(217,220,255);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 /* 页脚 */
 footer {
