@@ -25,7 +25,7 @@
         <!-- 总览选项卡内容 -->
         <div class="over_view_tab">
             <button></button>
-            <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_tab')">数据总览</button>
+            <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_tab')" data-tab="overview_analyze">数据总览</button>
             <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_analyze')">实时分析</button>
             <button class="overview_tab_links" onclick="open_overview_tab(event, 'overview_channel')">实时渠道</button>
         </div>
@@ -469,14 +469,14 @@
                         <div class="overview_analyze_content_chart_left_content">
                             <div class="overview_analyze_content_chart_left_content_label">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button class="overview_analyze_content_chart_left_content_label_tab"
+                                <button  class="overview_analyze_content_chart_left_content_label_tab"
                                     onclick="overview_analyze_content_chart_left_content_label(event, 'number_transactions')">成交人数</button><button
                                     class="overview_analyze_content_chart_left_content_label_tab"
                                     onclick="overview_analyze_content_chart_left_content_label(event, 'number_visits')">访问人数</button>
                             </div>
                             <!-- 引流分布-场景值图表 -->
-                            <div id="overview_analyze_content_chart_left_content_chart_first"></div>
-                            <div id="overview_analyze_content_chart_left_content_chart_second"></div>
+                            <div class="overview_analyze_content_chart_left_content_chart" id="number_transactions"></div>
+                            <div class="overview_analyze_content_chart_left_content_chart" id="number_visits" style="display: none;"></div>
                         </div>
                     </div>
 
@@ -493,15 +493,12 @@
                         </div>
                         <div class="overview_analyze_content_chart_right_content">
                             <div class="overview_analyze_content_chart_right_content_label">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button class="overview_analyze_content_chart_right_content_label_tab"
-                                    onclick="overview_analyze_content_chart_right_content_label(event, 'amount_order')">下单金额</button><button
-                                    class="overview_analyze_content_chart_right_content_label_tab"
-                                    onclick="overview_analyze_content_chart_right_content_label(event, 'number_order')">成交金额</button>
+                                <button class="overview_analyze_content_chart_right_content_label_tab" 
+                                    onclick="overview_analyze_content_chart_right_content_label(event, 'overview_analyze_content_chart_right_content_chart_first')">下单金额</button><button class="overview_analyze_content_chart_right_content_label_tab"
+                                    onclick="overview_analyze_content_chart_right_content_label(event, 'overview_analyze_content_chart_right_content_chart_second')">成交金额</button>
                             </div>
-                            <!-- 成交排行-场景值图表 -->
-                            <div id="overview_analyze_content_chart_right_content_chart_first"></div>
-                            <div id="overview_analyze_content_chart_right_content_chart_second"></div>
+                            <div class="overview_analyze_content_chart_right_content_chart" id="overview_analyze_content_chart_right_content_chart_first"></div>
+                            <div class="overview_analyze_content_chart_right_content_chart" id="overview_analyze_content_chart_right_content_chart_second"></div>
                         </div>
                     </div>
                 </div>

@@ -702,6 +702,7 @@ header .tab button.active {
 .overview_analyze_content_chart_left_content, .overview_analyze_content_chart_right_content {
     background: rgb(255,255,255);
     height: 300px;
+    width: 100%;
 }
 .overview_analyze_content_chart_left_content_label, .overview_analyze_content_chart_right_content_label {
     background: rgb(255,255,255);
@@ -711,6 +712,10 @@ header .tab button.active {
     background: rgb(255,255,255);
     height: 25px;
     width: 100px;
+}
+.overview_analyze_content_chart_left_content_label button.active, .overview_analyze_content_chart_right_content_label button.active {
+    background: rgb(238,239,255);
+    color: rgb(193,193,255);
 }
 .overview_analyze_content_chart_left_content_label button:first-child,
 .overview_analyze_content_chart_right_content_label button:first-child {
@@ -724,6 +729,11 @@ header .tab button.active {
     border: 1px solid rgb(217,220,255);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+.overview_analyze_content_chart_left_content_chart {
+    background: rgb(255,255,255);
+    height: 275px;
+    /* width: 584.5px; */
 }
 /* 页脚 */
 footer {

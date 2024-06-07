@@ -55,6 +55,170 @@ function open_overview_tab(evt, tabName) {
         document.getElementById("overview_tab").style.display = "none";
     }
 }
+// 实时分析-引流分布-场景值图表选项卡
+// 初始化页面时加载第一个选项卡的数据
+document.addEventListener('DOMContentLoaded', function () {
+    var tabs = document.querySelectorAll('.overview_analyze_content_chart_left_content_label_tab');
+    if (tabs.length > 0) {
+        tabs[0].classList.add('active');
+    }
+});
+function overview_analyze_content_chart_left_content_label(evt, tabName) {
+    var i, tab_content, tab_links;
+    tab_content = document.getElementsByClassName("overview_analyze_content_chart_left_content_chart");
+    for (i = 0; i < tab_content.length; i++) {
+        tab_content[i].style.display = "none";
+    }
+    tab_links = document.getElementsByClassName("overview_analyze_content_chart_left_content_label_tab");
+    for (i = 0; i < tab_links.length; i++) {
+        tab_links[i].classList.remove("active");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+// 初始化图表
+function initCharts() {
+    // 获取图表的DOM元素
+    var transactionsChart = echarts.init(document.getElementById('number_transactions'));
+    var visitsChart = echarts.init(document.getElementById('number_visits'));
+
+    // 图表数据
+    var labelData = [
+        {
+            label: "下单金额",
+            data: [
+                { name: "广告", value: 10 },
+                { name: "自营小程序", value: 20 },
+                { name: "扫码小程序", value: 30 },
+                { name: "公众号", value: 40 },
+                { name: "快捷入口", value: 50 },
+                { name: "扫码", value: 60 }
+            ]
+        },
+        {
+            label: "下单用户数",
+            data: [
+                { name: "广告", value: 100 },
+                { name: "自营小程序", value: 200 },
+                { name: "扫码小程序", value: 300 },
+                { name: "公众号", value: 400 },
+                { name: "快捷入口", value: 500 },
+                { name: "扫码", value: 600 }
+            ]
+        }
+    ];
+
+    // 配置图表选项
+    var transactionsOption = {
+        title: {
+            text: labelData[0].label,
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left'
+        },
+        series: [{
+            name: labelData[0].label,
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                show: false,
+                position: 'center'
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '20',
+                    fontWeight: 'bold'
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: labelData[0].data
+        }]
+    };
+
+    var visitsOption = {
+        title: {
+            text: labelData[1].label,
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left'
+        },
+        series: [{
+            name: labelData[1].label,
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                show: false,
+                position: 'center'
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '20',
+                    fontWeight: 'bold'
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: labelData[1].data
+        }]
+    };
+
+    // 设置图表选项
+    transactionsChart.setOption(transactionsOption);
+    visitsChart.setOption(visitsOption);
+
+    // 返回图表对象
+    return {
+        transactionsChart: transactionsChart,
+        visitsChart: visitsChart
+    };
+}
+
+// 切换图表
+function switchChart(evt, tabName) {
+    // 获取所有图表元素
+    var charts = document.getElementsByClassName("overview_analyze_content_chart_left_content_chart");
+
+    // 隐藏所有图表
+    for (var i = 0; i < charts.length; i++) {
+        charts[i].style.display = "none";
+    }
+
+    // 显示选中的图表
+    document.getElementById(tabName).style.display = "block";
+
+    // 刷新图表
+    if (tabName === "number_transactions") {
+        chartObjects.transactionsChart.resize();
+    } else if (tabName === "number_visits") {
+        chartObjects.visitsChart.resize();
+    }
+}
+
+// 初始化图表并获取图表对象
+var chartObjects = initCharts();
+// 让图表随屏幕自适应
+window.addEventListener('resize', function () {
+    chartObjects.transactionsChart.resize();
+    chartObjects.visitsChart.resize();
+});
+
 // 数据总览-今日概况-面积图
 (function () {
     var labelData = [{
@@ -579,14 +743,3 @@ function open_overview_tab(evt, tabName) {
         myChart.resize();
     });
 })();
-
-
-
-
-
-
-
-
-
-
-
